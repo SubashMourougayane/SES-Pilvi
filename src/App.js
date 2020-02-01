@@ -1,25 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  Redirect
+} from 'react-router-dom';
 
+import History from './utils/history';
+
+
+import Login from '../src/layouts/login/login';
+import Signup from './layouts/signup/signup';
+import Home from '../src/layouts/home/home';
+import NotFound from '../src/layouts/notFound/notFound';
+import Editor from '../src/layouts/editor/editor';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={History}>
+      <Switch>
+        <Route exact path="/"
+          render={() =>
+            localStorage.sesToken ? (
+              <Redirect to="/home" />
+            ) : (
+                <Redirect to="/login" />
+              )
+          }
+        />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/home"component={Home}/>
+        <Route path="/404" component={NotFound} />
+        <Redirect from="*" to="/404" />
+      </Switch>
+    </Router>
   );
 }
 

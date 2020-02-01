@@ -1,0 +1,83 @@
+.wholePage{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginHeadLogo{
+    width: 100%;
+}
+
+
+.loginWrap{
+    height: 60%;
+    width: 30%;
+    /* background-color: lightgray; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+.loginHeadLogo{
+    margin-bottom: 40px;
+}
+.loginEmail{
+    width: 60%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+.loginEmailInput{
+    height: 40px;
+    width: 90%;
+    margin: none;
+}
+
+.loginPass{
+    width: 60%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.loginPassInput{
+    height: 40px;
+    width: 90%;
+    margin: none;
+}
+
+.loginLoginButton{
+    width: 60%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.loginButtonInput{
+    height: 40px;
+    width: 90%;
+    margin: none;
+    border: none;
+    background-color: #f7ba33;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.loginButtonInput:hover{
+    cursor: pointer;
+}
+
+.signupText{
+    color: grey;
+}
+
+.signupText:hover{
+    cursor: pointer;
+}
